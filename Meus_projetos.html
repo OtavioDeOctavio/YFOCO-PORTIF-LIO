@@ -3,9 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos</title>
+    <title>Meus Projetos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <nav class="navbar">
+        <div id="hover_logo">
+            <div class="logo"><a href="index.html" id="minhalogo_texto">YFOCO+</a>
+        </div>
+    </div>
+
+        <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li onclick="abrir_sobre()" id="abrir_sobre">Sobre Nós</li>
+        <li><a href="https://github.com/OtavioDeOctavio" target="_blank" rel="noopener noreferrer">Projectos</a></li>
+        <li onclick="contato()" class="contato">Contato</li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="socials">
+                <a href="https://www.instagram.com/otavio.doctavio/" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+                <a href="https://github.com/OtavioDeOctavio" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
+                <a href="https://www.linkedin.com/in/otavio-de-octavio-50a24242a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.66 4.78 6.1V21H17.4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.43-2.1 2.9V21H9z"/></svg></a>
+            </div>
+            <button class="burger" id="burgerBtn" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <section class="receba_sobre">
+        <div class="Sobre">
+            <button id="sair_sobre" onclick="fechar_sobre()">X</button>
+            <h5>Sou estudante de Engenharia de Software e estou construindo minha carreira na área de tecnologia. Tenho interesse principalmente em desenvolvimento web e venho estudando e praticando HTML, CSS e JavaScript. <br>
+            Gosto de aprender por meio de cursos e aplicações em pequenos projetos. Também tenho conhecimentos basicos/intermediário em Git e GitHub, Python, e lógica de programação, e continuo estudando para ampliar cada vez mais minhas habilidades. <br>
+            Busco uma oportunidade de estágio ou minha primeira experiência profissional na área de desenvolvimento. <br> <br> </h5>
+        </div>
+    </section>
+    <section class="receba_gmail">
+        <div class="Gmail">
+            <button id="sair_gmail" onclick="fechar_contato()">X</button>
+            <h5>Obrigado pelo contato! Segue meu Gmail para mandar propostas ou manter contatos: <br><br><strong id="meu_gmail">otavio.doctavio@gmail.com</strong></h5>
+        </div>
+    </section>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="menu-panel" id="menuPanel">
+        <div id="cor_mudando">
+            <button class="menu-close" id="menuClose" aria-label="Fechar menu">&times;</button>
+            <ul class="menu-links">
+            
+                <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>Home</a></li>
+                <li id="abrir_sobre"><a onclick="abrir_sobre()" id="pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>Sobre Nós</a></li>
+                <li><a href="https://github.com/OtavioDeOctavio" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>Projectos</a></li>
+                <li><a href="#" onclick="contato()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>Contato</a></li>
+            </ul>
+            <div class="menu-socials">
+                <br><br>
+                <a href="https://www.instagram.com/otavio.doctavio/" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+                <a href="https://github.com/OtavioDeOctavio" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
+                <a href="https://www.linkedin.com/in/otavio-de-octavio-50a24242a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.66 4.78 6.1V21H17.4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.43-2.1 2.9V21H9z"/></svg></a>
+            </div>
+        </div>
+    </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <p id="copy">&copy;Otávio De Octavio</p>
+        <p id="footerzinha"><nobr>Esta pagina não possue nenhum afim financeiro</nobr></p><p id="footerzinha"><nobr>Foi inventada para fins de treinamento escolar para aprendizado<br>A empresa YFOCO+ é uma inventação, não possue uma marca registrada</nobr></p>
+    </footer>
+
+
+    <script>
+        const burgerBtn = document.getElementById('burgerBtn');
+        const menuPanel = document.getElementById('menuPanel');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuClose = document.getElementById('menuClose');
+
+        function openMenu(){
+            menuPanel.classList.add('open');
+            menuOverlay.classList.add('open');
+        }
+        function closeMenu(){
+            menuPanel.classList.remove('open');
+            menuOverlay.classList.remove('open');
+        }
+
+        burgerBtn.addEventListener('click', openMenu);
+
+        menuClose.addEventListener('click', closeMenu);
+
+        menuOverlay.addEventListener('click', closeMenu);
+
+        document.addEventListener( 'keydown', (e) => { if(e.key === 'Escape') closeMenu(); } );
+
+        function contato() {
+            document.querySelector('section.receba_sobre').style.display = 'none'
+            document.querySelector('section.receba_gmail').style.display = 'block'
+        }
+        function fechar_contato() {
+            document.querySelector('section.receba_gmail').style.display = 'none'
+        }
+        function abrir_sobre(){
+            document.querySelector('section.receba_gmail').style.display = 'none'
+            document.querySelector('section.receba_sobre').style.display = 'block'
+        }
+        function fechar_sobre(){
+            document.querySelector('section.receba_sobre').style.display = 'none'
+        }
+    </script>
 </body>
 </html>
