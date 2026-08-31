@@ -1,0 +1,559 @@
+/* =========================================================
+   YFOCO+  —  Portfólio dev
+   Paleta: grafite escuro + âmbar (aceso como cursor de terminal)
+   Tipografia: Space Grotesk (display) + Inter (corpo) + JetBrains Mono (badges/tags)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500;700&display=swap');
+
+:root {
+  --bg: #121214;
+  --bg-soft: #1b1b1e;
+  --panel: #18181a;
+  --border: #2a2a2e;
+  --text: #ededef;
+  --text-dim: #9a9aa2;
+  --accent: #e8a33d;       /*mió cor*/
+  --accent-soft: #7a5a2a;
+  --html-color: #f06b4f;
+  --css-color: #4f9cf0;
+  --js-color: #e8a33d;
+  --radius: 10px;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+::selection { background: var(--accent); color: #121214; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 6vw;
+  background: rgba(18, 18, 20, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+#abrir_sobre{
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.contato{
+    background-color: var(--accent);
+    padding: 2px;
+    padding-left: 4px ;
+    padding-right: 4px;
+    border-radius: 5px;
+    color: #18181a;
+    font-weight: 800;
+    cursor: pointer;
+}
+.contato:hover{
+    
+    background-color: var(--bg-soft);
+    color: var(--accent);
+    font-weight: 500;
+
+}
+#hover_logo .logo {
+  font-family: var(--font-mono);
+}
+
+#minhalogo_texto {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+#minhalogo_texto::after {
+  content: '_';
+  color: var(--accent);
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+
+.nav-links a:hover {
+    color: var(--accent);
+  /*color: var(--text);*/
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials a svg {
+  width: 19px;
+  height: 19px;
+  color: var(--text-dim);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socials a:hover svg {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.burger:hover span {
+  background: var(--accent);
+}
+
+/* =========================================================
+   LAYOUT PRINCIPAL
+   ========================================================= */
+
+#juntando_direita_esquerda {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 8rem 6vw 5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+
+.hero h1 #txt1{
+  color: var(--text);
+}
+
+.hero h1 .fade {
+  color: var(--accent);
+}
+#txt2{
+    background: var(--accent);
+    color: var(--bg-soft);
+    border-radius: 2px;
+    margin: 6px;
+    padding: 0px;
+}
+
+#frase\ pequena {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  max-width: 46ch;
+  margin-top: 0.4rem;
+}
+
+/* Badges — estilo "abas de editor" */
+
+.badges {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.badge:hover {
+  transform: translateY(-3px);
+}
+
+.receba_gmail{
+    z-index: 1001;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    text-shadow: 0px 0px 14px #121214;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+h5{
+    font-weight: 300;
+    margin-bottom: 15px;
+
+
+}
+#meu_gmail{
+    color: var(--bg);
+    background-color: var(--accent);
+    padding: 1px;
+    font-weight: 800;
+    text-shadow: 0px 0px 14px #121214;
+    
+}
+#sair_gmail:hover{
+    background-color: #ba72068f;
+}
+#sair_gmail{
+    margin-bottom: 12px;
+    position: relative;
+    left: 90%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    padding: 4px;
+    color: var(--text);
+    background-color: #ff9a038f;
+    border: none;
+    border-radius: 3px;
+}
+.receba_sobre{
+    z-index: 1001;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    text-shadow: 0px 0px 14px #121214;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: none;
+    
+}
+#sair_sobre{
+    margin-bottom: 12px;
+    position: relative;
+    left: 90%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    padding: 4px;
+    color: var(--text);
+    background-color: #ff9a038f;
+    border: none;
+    border-radius: 3px;
+}
+#sair_sobre:hover{
+    background-color: #ba72068f;
+}
+
+
+
+.badge.html { color: var(--html-color); border-color: color-mix(in srgb, var(--html-color) 40%, var(--border)); }
+.badge.css  { color: var(--css-color);  border-color: color-mix(in srgb, var(--css-color) 40%, var(--border)); }
+.badge.js   { color: var(--js-color);   border-color: color-mix(in srgb, var(--js-color) 40%, var(--border)); }
+
+/* =========================================================
+   CARD DE PROJETOS (efeito tilt 3D via JS)
+   ========================================================= */
+
+.card_apresentando_projetos {
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.fundo_preto {
+  position: relative;
+  width: min(100%, 640px);
+  padding: 2.8rem;
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgb(24, 24, 25), rgb(28, 28, 27));
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, background 0.15s ease-out;
+  cursor: pointer;
+}
+
+#h4 {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  color: var(--text);
+  transition: transform 0.2s ease;
+}
+
+#estrelas {
+  width: 80px;
+  height: auto;
+  position: relative;
+  top: 100%;
+  transition: transform 0.2s ease;
+}
+
+#imagem_minha {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 150;
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(80vw, 320px);
+  background: var(--bg-soft);
+  border-left: 1px solid var(--border);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 200;
+}
+
+.menu-panel.open {
+  transform: translateX(0);
+}
+
+#cor_mudando {
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menu-close:hover {
+  color: var(--accent);
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 2.5rem;
+}
+
+.menu-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.menu-links a svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.menu-links a:hover {
+  color: var(--accent);
+  gap: 1rem;
+}
+
+.menu-socials {
+  margin-top: auto;
+  display: flex;
+  gap: 1.2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.menu-socials a svg {
+  width: 19px;
+  height: 19px;
+  color: var(--text-dim);
+  transition: color 0.2s ease;
+}
+
+.menu-socials a:hover svg {
+  color: var(--accent);
+}
+footer{
+    text-align: center;
+    
+    border-top: #9a9aa2 solid 0.1cap;
+    padding: 20px;
+    background: linear-gradient(180deg, var(--bg), rgb(24, 24, 25));
+}
+#copy{
+    padding-bottom: 10px ;
+}
+#footerzinha{
+    color: #9a9aa2;
+    font-size: 10px;
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (min-width: 900px) {
+  #juntando_direita_esquerda {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero {
+    max-width: 55%;
+  }
+
+  .card_apresentando_projetos {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  #juntando_direita_esquerda {
+    padding-top: 6.5rem;
+  }
+
+  .fundo_preto {
+    padding: 2rem 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
