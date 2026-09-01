@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Projetos</title>
+    <title>Minha Calculadora</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -65,38 +65,54 @@
             </div>
         </div>
     </aside>
-    <br><br><br>
-    
-    <div id="meio">
+    <div id="juntando_direita_esquerda">
         <section class="hero">
-            <h2 id="frase_rapida_projetos">"aviso: os projetos são aumentados de acordo com o aprendizado e sera usado para meios de estudos, aprimoramentos de lógica e portifólio."</h2>
             <h1>
                 <span id="txt1">BEM</span><br>
-                <span class="fade">VINDO AOS</span><br>
-                <span id="calculadora_txt">GRANDES PROJETOS</span>
+                <span class="fade">VINDO A</span><br>
+                <span id="calculadora_txt">CALCULADORA</span>
             </h1>
-            
+            <br>
+            <h2 id="frase pequena">Minha calculadora feita em HTML, CSS e JAVASCRIPT.</h2>
+        </section>
+        <section>
+            <div class="calculadora">
+                <h1>Calculadora</h1>
+                <p id="resultado">resultado</p>
+                <table>
+                    <tr>
+                        <td><button class="botao">C</button></td>
+                        <td><button class="botao">^</button></td>
+                        <td><button class="botao">/</button></td>
+                        <td><button class="botao">*</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="botao">7</button></td>
+                        <td><button class="botao">8</button></td>
+                        <td><button class="botao">9</button></td>
+                        <td><button class="botao">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="botao">4</button></td>
+                        <td><button class="botao">5</button></td>
+                        <td><button class="botao">6</button></td>
+                        <td><button class="botao">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="botao">1</button></td>
+                        <td><button class="botao">2</button></td>
+                        <td><button class="botao">3</button></td>
+                        <td rowspan="2"><button class="botao" id="rowspan">=</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button class="botao" id="colspan">0</button></td>
+                        <td><button class="botao">.</button></td>
+                    </tr>
+                </table>
+            </div>
         </section>
     </div>
-    <br>    
-    <section id="cards">
-        <div class="projetos">
-            <div class="card">
-                <span class="card-tag html">Calculadora</span>
-                <h2 class="card-titulo">Calculadora em JS</h2>
-                <p class="card-descricao">Uma calculadora em JavaScript funcional por meio de comandos simples.</p>
-                <a href="CALCULADORA.html" class="card-link">Ver projeto →</a>
-            </div>
 
-            <div class="card">
-                <span class="card-tag css">ola</span>
-                <h2 class="card-titulo">num seeeeeeeeeii</h2>
-                <p class="card-descricao">sei laaaaaaaaaaaaaaaaa</p>
-                <a href="#" class="card-link">Ver projeto →</a>
-            </div>
-        </div>
-    </section>
-    <br>
     <footer>
         <p id="copy">&copy;Otávio De Octavio</p>
         <p id="footerzinha"><nobr>Esta pagina não possue nenhum afim financeiro</nobr></p><p id="footerzinha"><nobr>Foi inventada para fins de treinamento escolar para aprendizado<br>A empresa YFOCO+ é uma inventação, não possue uma marca registrada</nobr></p>

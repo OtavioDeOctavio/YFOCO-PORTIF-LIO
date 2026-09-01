@@ -1,8 +1,3 @@
-/* =========================================================
-   YFOCO+  —  Portfólio dev
-   Paleta: grafite escuro + âmbar (aceso como cursor de terminal)
-   Tipografia: Space Grotesk (display) + Inter (corpo) + JetBrains Mono (badges/tags)
-   ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500;700&display=swap');
 
@@ -214,12 +209,20 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent);
 }
 #txt2{
-    background: var(--accent);
-    color: var(--bg-soft);
-    border-radius: 2px;
-    margin: 6px;
-    padding: 0px;
+  background: var(--accent);
+  color: var(--bg-soft);
+  border-radius: 2px;
+  margin: 6px;
+  padding: 0px;
 }
+#calculadora_txt{
+  
+  background: var(--accent);
+  color: var(--bg-soft);
+  border-radius: 8px;
+  padding: 0px;
+}
+
 
 #frase\ pequena {
   font-family: var(--font-body);
@@ -321,6 +324,8 @@ h5{
     display: none;
     
 }
+
+
 #sair_sobre{
     margin-bottom: 12px;
     position: relative;
@@ -342,6 +347,190 @@ h5{
 .badge.html { color: var(--html-color); border-color: color-mix(in srgb, var(--html-color) 40%, var(--border)); }
 .badge.css  { color: var(--css-color);  border-color: color-mix(in srgb, var(--css-color) 40%, var(--border)); }
 .badge.js   { color: var(--js-color);   border-color: color-mix(in srgb, var(--js-color) 40%, var(--border)); }
+
+/*============================================================================================================
+    CALCULADORA STYLE
+================================================================================================*/
+
+.calculadora {
+  max-width: 320px;
+  margin: 60px auto;
+  padding: 24px;
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.calculadora h1 {
+  font-family: var(--font-display);
+  color: var(--text);
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 0 0 16px;
+}
+
+.calculadora #resultado {
+  background-color: var(--bg-soft);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  text-align: right;
+  padding: 16px 12px;
+  margin: 0 0 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calculadora table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+  table-layout: fixed;
+}
+
+.calculadora td {
+  padding: 0;
+}
+
+.calculadora .botao {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+
+.calculadora .botao:hover {
+  background-color: var(--bg-soft);
+  border-color: var(--accent-soft);
+}
+
+.calculadora .botao:active {
+  transform: scale(0.95);
+}
+
+
+.calculadora tr:first-child .botao,
+.calculadora td:last-child .botao {
+  color: var(--accent);
+  border-color: var(--accent-soft);
+}
+
+
+.calculadora #rowspan {
+  height: 100%;
+  aspect-ratio: auto;
+  height: 120px;
+  background-color: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: bold;
+}
+
+.calculadora #rowspan:hover {
+  background-color: var(--accent-soft);
+  border-color: var(--accent-soft);
+}
+
+
+.calculadora #colspan {
+  height: 60px;
+  aspect-ratio: auto;
+}
+/* =========================================================
+   Projetos
+   ========================================================= */
+#meio{
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+#frase_rapida_projetos{
+
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 100;
+}
+
+
+.projetos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-soft);
+}
+
+.card-tag {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--bg);
+  font-weight: bold;
+}
+
+.card-tag.html { background-color: var(--html-color); }
+.card-tag.css  { background-color: var(--css-color); }
+.card-tag.js   { background-color: var(--js-color); }
+
+.card-titulo {
+  font-family: var(--font-display);
+  color: var(--text);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.card-descricao {
+  font-family: var(--font-body);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.card-link {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
 
 /* =========================================================
    CARD DE PROJETOS (efeito tilt 3D via JS)
