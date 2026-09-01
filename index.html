@@ -11,12 +11,12 @@
   <nav class="navbar">
     <div id="hover_logo">
       <div class="logo"
-      ><a href="index.html" id="minhalogo_texto">YFOCO+</a>
+      ><a href="index.html" id="minhalogo_texto" target="_self">YFOCO+</a>
       </div>
     </div>
 
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" target="_self">Home</a></li>
       <li onclick="abrir_sobre()" id="abrir_sobre">Sobre Nós</li>
       <li><a href="https://github.com/OtavioDeOctavio" target="_blank" rel="noopener noreferrer">Projectos</a></li>
       <li onclick="contato()" class="contato">Contato</li>
@@ -54,7 +54,7 @@
       
         <div class="fundo_preto">
           <h4 id="h4">VEJA MAIS PROJETOS</h4>
-          <a href="Meus_projetos.html" target="_blank">
+          <a href="Meus_projetos.html" target="_parent">
             <img src="icons/stars.webp" alt="." id="estrelas">
             <img src="imagens/BackgroundEraser_20260815_232940228.png" id="imagem_minha" alt=".">
           
@@ -85,7 +85,7 @@
       <button class="menu-close" id="menuClose" aria-label="Fechar menu">&times;</button>
       <ul class="menu-links">
         
-        <li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>Home</a></li>
+        <li><a href="index.html" target="_self"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>Home</a></li>
         <li id="abrir_sobre"><a onclick="abrir_sobre()" id="pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>Sobre Nós</a></li>
         <li><a href="https://github.com/OtavioDeOctavio" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>Projectos</a></li>
         <li><a href="#" onclick="contato()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>Contato</a></li>
